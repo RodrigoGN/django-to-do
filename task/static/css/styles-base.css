@@ -1,0 +1,253 @@
+.container-fluid{
+    background: #1e1f26;
+    padding: 0;
+}
+.container-fluid .row {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    }
+h1 {
+    color: #f2f2f2;
+}
+p {
+    color: #f2f2f2;
+}
+/*********** NavBar ***********/
+.navbar {
+    border-bottom: 1px solid #1e1f26;
+    background: #1e1f26;
+    margin: 0px 20px 20px 20px;
+}
+.navbar-nav {   
+    margin: auto;
+}
+.navbar-brand {
+    padding: 0px 20px 0px 20px;
+    margin: 10px 20px 10px 20px;
+    border-left: 0px 30px 0px 30px solid transparent;
+    color: #03dac6;
+    font-weight: bold; 
+}
+.navbar-light .navbar-nav a.nav-link {
+    align-items: flex-end;
+    color: #03dac6;
+    letter-spacing: 1px;
+}
+.navbar-nav:hover {
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.navbar-brand:hover {
+    color: #1e1f26;
+    padding: 10px 20px 10px 20px;
+    margin: 0px 20px 0px 20px;
+    background: #03dac6;
+    transition: all 0.5s ease;
+    transform: translate3d(0, -5px, 20px);
+    border: 0px 30px 0px 30px solid transparent;
+}
+.navbar-light .navbar-nav a.nav-link:hover {
+    color: #1e1f26;
+    background: #03dac6;
+    transition: all 0.5s ease;
+    transform: translate3d(0, -5px, 20px);
+}
+
+/*********** Botao adicionar ***********/
+.add-link{
+    text-decoration: none;
+}
+.add-div {
+    background-color: #3476e2;
+    cursor: pointer;
+    display: inline-block;
+    color: #f2f2f2;
+    padding: 8px 8px 8px 0px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+.fas.fa-plus {
+    padding: 0px 0px 0px 5px;
+    color: #f2f2f2;
+    margin-right: 10px;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+/*********** Botao Search ***********/
+.search-div {
+    padding: 0px 0px 0px 10px;
+    display: inline-block;
+    border-radius: 5px;
+}
+.btn-search {
+    cursor: pointer;
+}   
+.fas.fa-search {
+    cursor: pointer;
+    padding: 0px 10px 0px 10px;
+    color: #3476e2;
+    position: relative;
+}
+
+/*********** Lista de tarefas ***********/
+.list-div {
+    padding: 0px;
+}
+.task-list {
+    padding-left: 0px;
+}
+.task-item {
+    color: #f2f2f2;
+    list-style: none;
+    font-size: 20px;
+    height: 50px;
+    padding-top: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+.lista-tar a {
+    color: #f2f2f2;
+}
+.lista-tar a:hover {
+    color: #03dac6;
+}
+.fas.fa-trash, .fas.fa-edit {
+    cursor: pointer;
+    margin: 5px;
+    font-size: 20px;
+    float: right;
+}
+.fas.fa-trash{
+    color: #db1e47;
+}
+.fas.fa-edit {
+    color: #13c43f;
+}
+/********** Editando a tarefa **********/
+.btn-success, .btn-danger {
+    margin: 30px 30px 0px 0px;
+}
+/*show in center titulo-tarefa*/
+.titulo-tarefa {
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    padding: 50px 0px 0px 0px;
+}
+.descricao-tarefa, .data-tarefa, .criador-tarefa, .status-tarefa {
+    text-align: center;
+    margin: 50px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.back-to-home {
+    text-align: center;
+    margin: 50px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.fas.fa-backward {
+    cursor: pointer;
+    margin: 0px 5px 0px 5px;
+    padding: 0px 0px 0px 0px;
+}
+/********** Login ***********/
+.auth-card {
+    background: #3e3f46;
+    margin-bottom: 50px;
+}
+.btn-block {
+    margin: 25px 0px 0px 0px;
+    width: 100%;
+}
+
+.ck-remember {
+    text-align: center;
+    align-items: center;
+    margin: 10px 0px 0px 0px;
+}
+.change-form-p {
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.panel-title, #div_id_username {
+    color: #f2f2f2;
+}
+#div_id_password, #div_id_password1, #div_id_password2 {
+    color: #f2f2f2;
+}
+.form-text, .text-muted, #hint_id_password1 ul li, #hint_id_password2 {
+    color: #f2f2f2 !important;
+}
+
+/*********** Rodapé ***********/
+footer {
+    background-color: #1e1f26;
+    height: 300px;
+    border-top: 2px solid #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    
+}
+footer p {
+    color: #f5f5f5;
+    text-align: center;
+    top: 50%;
+    position: relative;
+}
+
+/*********** Messages ***********/
+.alert  {
+    list-style: none;
+    padding: 20px;
+    background-color: #3476e2;
+    color: white;
+    margin-bottom: 15px;
+}
+ul.messages {
+    list-style: none;
+    padding: 0px;
+}
+ul.messages li {
+    list-style: none;
+    padding: 0px;
+    border-bottom: 1px dashed #ccc;
+    margin: 0px;
+}
+
+/*********** Paginação ***********/
+.pagination {
+    margin-bottom: 20px;
+}
+.step-links {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.step-links .current {
+    color: #f2f2f2;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/*********** Scroll-top ***********/
+#seta-scroll-top-container{
+    display:none;
+    position:fixed;
+    cursor:pointer;
+    z-index:9999
+}
+#seta-scroll-top-container div.text-holder{
+    padding:3px 10px;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -webkit-box-shadow:4px 4px 5px 0 rgba(50,50,50,0.5);
+    -moz-box-shadow:4px 4px 5px 0 rgba(50,50,50,0.5);
+    box-shadow:4px 4px 5px 0 rgba(50,50,50,0.5)
+}
+#seta-scroll-top-container a{
+    outline-style:none;
+    box-shadow:none;
+    text-decoration:none
+}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Lista de Tarefas
+{% endblock %}
+
+{% block content %}
+    <div class="offset-1 col-10 list-div">
+        <h1>Lista de Tarefas</h1>
+        <a id="add-link" href="newtask/">
+            <div class="col-2 add-div">
+                <i class="fas fa-plus"></i> Adicionar Tarefas
+            </div>
+        </a>
+        <div class="col-9 search-div">
+            <form method="GET" id="search-form">
+                <input class="form-control" type="text" id="search" name="search" placeholder="Digite aqui a tarefa para realizar a busca" value="{{ request.GET.search }}">
+            </form>
+        </div>
+        <i class="fas fa-search" id="search-btn" onclick="searchTask()"></i>
+        </i>
+        <div>
+            <br>
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li {% if message.tags %}class="alert alert-{{message.tags}}"{% endif %}>
+                                {{ message }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+        </div>
+        <ul class="task-list">
+            {% for task in tasks %}
+            <li class="task-item">
+                <span class="lista-tar"><a href="/task/{{task.id}}">{{task.title}}</a></span>
+                <a href="/delete/{{task.id}}" class="delete-btn"><span><i class="fas fa-trash"></i></span></a>
+                <a href="/edit/{{task.id}}"><span><i class="fas fa-edit"></i></span></a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if tasks.has_previous %}
+                <a href="?page={{ tasks.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+            {% endif %}
+            {% if tasks.paginator.num_pages %}
+            <span class="current">
+                {{ tasks.number }} de {{ tasks.paginator.num_pages }}
+            </span>
+            {% endif %}
+            {% if tasks.has_next %}
+                <a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+            {% endif %}
+
+
+        </span>
+    </div>
+
+    
+    {% if messages %}
+        {% for message in messages %}
+            {% if "Nenhuma tarefa com o nome" in message %}
+                <div class="pagination">
+                    <br>
+                    <!-- if 'Nenhuma tarefa encontrada!' in messages-->
+                    <span class="step-links">
+                        <p class="back-to-home"><a href="/list"><i class="fas fa-backward"></i>  Voltar</a></p>
+                    </span>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    
+    
+    <div style="padding-top: 100px;">
+    </div>
+        
+{% endblock %}

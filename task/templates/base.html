@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <script src="{% static 'js\jquery-3.6.0.min.js' %}"></script>
+    <link type="image/png" sizes="32x32" rel="icon" href="{% static 'img\favicon--código.png' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css\styles-base.css' %}">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<body style="background: #333;">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-gradient">
+            <a class="navbar-brand" href="/">To Do</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">  Tarefas  </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">  Usuários  </a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">  Sobre Nós  </a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts/logout">  Sair  </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts/login/">  Login  </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        {%block content%}{%endblock%}
+    </div>  
+    <footer>
+        <p>Minha Lista de Tarefas</p> 
+    </footer>
+    <div id="seta-scroll-top-container" style="opacity: 0.85; right: 20px; bottom: 20px; display: block;">
+        <a href="#top"><img src="{% static 'img/1.png' %}" alt="" style="width: 40px; height: 40px;"></a>
+    </div>
+    <!-- JavaScript -->
+    <script src="https://kit.fontawesome.com/2e3a961048.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js\scripts-base.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

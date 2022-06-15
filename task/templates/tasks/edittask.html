@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Editando '{{task.title}}'
+{% endblock %}
+
+{% block content %}
+    <div class="offset-1 col-10 list-div edit-task-div" id="edit-task-div">
+        <h1>Faça abaixo as alterações na sua tarefa: <br><span id="title-task">'{{task.title}}'</span></h1>
+        <form class="form_tasks" method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="btn btn-success" type="submit" value="Editar Tarefa">
+            <a href="/list"><button class="btn btn-danger">Voltar</button></a>
+        </form>
+    </div>
+    <div style="padding-top: 100px;">
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Lista de Tarefas
+{% endblock %}
+
+{% block content %}
+    <div class="offset-1 col-10 list-div">
+        <h1 class="titulo-tarefa">{{task.title}}</h1>
+            <p class="descricao-tarefa">{{task.describe}}</p>
+            <p class="data-tarefa">Tarefa criada em: {{task.create_at}}</p>
+            <p class="criador-tarefa">Criador da tarefa: {{task.user}}</p>
+            <p class="status-tarefa">Status atual: {{task.done}}</p>
+        <p class="back-to-home"><a href="/list"><i class="fas fa-backward"></i>  Voltar</a></p>
+    </div>  
+    <div style="padding-top: 100px;">
+    </div>
+{% endblock %}
