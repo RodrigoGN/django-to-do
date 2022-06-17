@@ -53,6 +53,52 @@ p {
     transition: all 0.5s ease;
     transform: translate3d(0, -5px, 20px);
 }
+/********** Dashboard **********/
+.dashboard {
+    padding: 0;
+    width: 100%;
+    display: block;
+
+}
+.dashboard h4 {
+    font-size: 20px;
+
+    margin: 0;
+}
+.dashboard span {
+    font-size: 40px;
+    display: block;
+    width: 100%;
+}
+.dashboard-box {
+    float: left;
+    background-color: #ccc;
+    color: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: 130px;
+    width: 32%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.dashboard-box:nth-child(2) {
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    background-color: #ccc;
+    color: #f2f2f2;
+}
+#dashboard-lastdays {
+    background-color: #13c43f;
+}
+#dashboard-done {
+    background-color: #3476e2;
+}
+#dashboard-doing {
+    background-color: #db1e47;
+}
+
+
 
 /*********** Botao adicionar ***********/
 .add-link{
@@ -91,6 +137,24 @@ p {
     color: #3476e2;
     position: relative;
 }
+#title-filter {
+    color: #f2f2f2;
+    padding: 20px 10px 20px 10px;
+    font-size: 14px;
+}
+.filter-div {
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    
+}
+#filter {
+    display: inline-block;
+    width: 200px;
+    color: #555;
+    border-radius: 5px;
+}
 
 /*********** Lista de tarefas ***********/
 .list-div {
@@ -104,6 +168,14 @@ p {
     list-style: none;
     font-size: 20px;
     height: 50px;
+    padding: 10px 15px 0px 15px;
+    border-bottom: 1px dashed #ccc;
+}
+.task-item.done {
+    background-color: #555;
+    list-style: none;
+    font-size: 20px;
+    height: 50px;
     padding-top: 10px;
     border-bottom: 1px dashed #ccc;
 }
@@ -113,7 +185,7 @@ p {
 .lista-tar a:hover {
     color: #03dac6;
 }
-.fas.fa-trash, .fas.fa-edit {
+.fas.fa-trash, .fas.fa-edit, .fas.fa-check {
     cursor: pointer;
     margin: 5px;
     font-size: 20px;
@@ -124,6 +196,12 @@ p {
 }
 .fas.fa-edit {
     color: #13c43f;
+}
+.done .fas.fa-check {
+    color: #3476e2;
+}
+.fas.fa-check {
+    color: #ccc;
 }
 /********** Editando a tarefa **********/
 .btn-success, .btn-danger {

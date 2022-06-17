@@ -2,6 +2,9 @@ console.log('scripts-base.js carregado!');
 
 $('body').ready(function(){
 
+    var baseUrl = 'http://127.0.0.1:8000/';
+    var filter = $('#filter');
+
     var deleteBtn = $('.delete-btn');
     $(deleteBtn).on('click', function(e) {
         e.preventDefault();
@@ -11,7 +14,10 @@ $('body').ready(function(){
             window.location.href = dellink;
         }
     });
-
+    $(filter).change(function(){
+        var filterValue = $(this).val();
+        window.location.href = baseUrl + '?filter=' + filterValue;
+    });
     
 });
 function searchTask(){
